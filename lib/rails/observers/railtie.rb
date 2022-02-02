@@ -23,7 +23,7 @@ module Rails
         ActiveSupport.on_load(:active_record) do
           ActiveRecord::Base.instantiate_observers
 
-          ActionDispatch::Reloader.to_prepare do
+          ActiveSupport::Reloader.to_prepare do
             ActiveRecord::Base.instantiate_observers
           end
         end
